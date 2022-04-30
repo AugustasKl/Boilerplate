@@ -5,6 +5,7 @@ const Home: React.FC = () => (
 	<>
 	<div>labas</div>
 	<div>labas</div>
+	<div>labas</div>
 	</>
 	
 )
