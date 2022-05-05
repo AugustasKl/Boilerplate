@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import LazyLoad from 'react-lazyload';
 
-import { mobile } from 'styles/breakpoints';
+import { mobile } from './../styles/theme';
 import { Visuals, visuals } from 'utils/visuals';
 
 interface Styles {

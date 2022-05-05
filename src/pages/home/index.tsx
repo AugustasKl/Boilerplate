@@ -2,7 +2,7 @@
 import React from 'react';
 
 const Home: React.FC = () => (
-	<div>labas</div>
+	<div>BoilerPlate</div>
 	
 )
 

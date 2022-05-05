@@ -1,3 +1,4 @@
+
 //wrappers
 export * from './wrappers/SectionWrapper';
 export * from './wrappers/Box';
@@ -5,6 +6,7 @@ export * from './wrappers/Container';
 export * from './wrappers/ContentWrapper';
 export * from './wrappers/FlexWrapper';
 export * from './wrappers/GridWrapper';
+export * from './wrappers/ElementWrapper';
 
 //texts
 export * from './texts/TextBase';
@@ -19,7 +21,13 @@ export * from './typography/Typography';
 export * from './Image';
 
 //input
-export * from './Input/InputComponent';
+export * from './Input/elements/Input';
+export * from './Input/InputPrimary';
 
-//button
-export * from './buttons/elements/BaseButton';
+
+
+
+
+
+
+

@@ -11,6 +11,7 @@ import {
 	TypographyProps,
 	textStyle,
 	typography,
+
 } from 'styled-system';
 
 import { Colors, Theme } from 'styles/theme';
@@ -39,7 +40,8 @@ const typographyProperties = compose(
 	lineHeight,
 	textStyle,
 	typography,
-	space
+	space,
+	// padding
 );
 
 export interface TextProps extends SpaceProps<Theme>, TypographyProps<Theme> {
@@ -49,6 +51,7 @@ export interface TextProps extends SpaceProps<Theme>, TypographyProps<Theme> {
 	textDecoration?: Property.TextDecoration;
 	onClick?: () => void;
 	children: ReactNode;
+	// padding?:string;
 }
 
 export const Typography: React.FC<TextProps> = ({
@@ -66,13 +69,13 @@ export const Typography: React.FC<TextProps> = ({
 };
 
 const Text = styled.p<TextProps>`
-	padding: 0;
+	padding: ${({ padding }) => padding || ''};
 
 	${({ type, theme }) =>
 		type && applyTextType(type as TextType, theme as Theme)};
 
 	color: ${({ theme, color }) =>
-		color ? theme.colors[color] : theme.colors.white};
+		color ? theme.colors[color] : theme.colors.black};
 
 	&& {
 		${typographyProperties}
