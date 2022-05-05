@@ -5,9 +5,10 @@ import { theme } from 'styles/theme';
 const GlobalStyle = createGlobalStyle`
 * {
     box-sizing: border-box;
-    margin: 0
+    margin: 0;
 }
 body {
+	/* background-color: ${theme.colors.mainBackground}; */
     overflow: hidden auto;
 }
 html {

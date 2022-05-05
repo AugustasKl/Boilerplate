@@ -1,30 +1,27 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
+import {
+    color,
+    BackgroundColorProps,
+    compose,
+    position,
+    PositionProps,
+} from 'styled-system';
+import { tablet } from 'styles/breakpoints';
 
-import { backgroundColor, BackgroundColorProps, compose, position, PositionProps } from "styled-system";
-import { tablet, Theme } from "styles/theme";
+import { Theme } from 'styles/theme';
 
-const containerProps = compose(position, backgroundColor);
+const containerProps = compose(color, position);
 
-interface ContainerProps<T> extends BackgroundColorProps<T>, PositionProps<T> {
-//   minHeight?: string;
-//   position?:string
-//   backgroundColor?: Colors;
-}
+interface Styles<T> extends BackgroundColorProps<T>, PositionProps<T> { }
 
-export const Container = styled.div<ContainerProps<Theme>>`
-  margin: 0 auto;
-  padding: 0 1rem;
-  max-width: 72rem;
-  
-  background-color: ${({ backgroundColor, theme }) =>
-    backgroundColor ? theme.colors : ""};
-    position: ${({position})=> position || ''}
-
-
-  && {
-    ${containerProps}
-  }
-  @media ${tablet} {
-		max-width:100%;
+export const Container = styled.div<Styles<Theme>>`
+	margin: 0 auto;
+    max-width: 72rem;
+    padding: 0 1rem;
+    @media ${tablet} {
+    max-width: 100%;
+    }
+    && {
+		${containerProps};
 	}
 `;

@@ -1,26 +1,18 @@
 import styled from "styled-components/macro";
-
-import { compose, flexbox, FlexboxProps } from "styled-system";
+import { flexbox, FlexboxProps } from "styled-system";
 import { Theme } from "styles/theme";
-import { Box } from "./../../components";
 
-const flexWrapperProps = compose(flexbox);
+import { Box } from "./Box";
 
-interface FlexWrapperProps<T> extends FlexboxProps<T> {
-
-  alignItems?: string;
-  justifyContent?: string;
-  gap?: string;
+interface GapProps{
+  gap?:string;
 }
 
-export const FlexWrapper = styled(Box)<FlexWrapperProps<Theme>>`
+export const FlexWrapper = styled(Box) <FlexboxProps<Theme> & GapProps>`
   display: flex;
-  flex-direction: ${({ flexDirection }) => flexDirection || "row"};
-  align-items: ${({ alignItems }) => alignItems || "center"};
-  justify-content: ${({ justifyContent }) => justifyContent || "center"};
-  gap: ${({ gap }) => gap || ""};
 
   && {
-    ${flexWrapperProps}
+    ${flexbox};
+    gap: ${space=>space.gap};
   }
 `;

@@ -39,7 +39,7 @@ const boxProps = compose(
 	textAlign
 );
 
-export interface StylesProps<T>
+export interface BoxProps<T>
 	extends 
 	    AlignSelfProps<T>,
 		BorderProps<T>,
@@ -53,7 +53,7 @@ export interface StylesProps<T>
 		TextAlignProps<T>,
 		SpaceProps<T> {}
 
-export const Box = styled.div<StylesProps<Theme>>`
+export const Box = styled.div<BoxProps<Theme>>`
 	&& {
 		${boxProps};
 	}

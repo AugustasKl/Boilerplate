@@ -1,20 +1,14 @@
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
+import { tablet } from "styles/breakpoints";
+import { Theme } from "styles/theme";
 
-import { tablet } from 'styles/theme';
+import { Box } from "./Box";
 
-interface ContentWrapperStyles {
-    margin?: string;
-    maxWidth?:string;
-	padding?: string;
-}
-
-export const ContentWrapper = styled.section<ContentWrapperStyles>`
-	margin: 0 auto;	
-	max-width: 58rem;
-	padding: 0 1rem;
-
-
-	@media ${tablet} {
-		max-width: 100%;
-	}
+export const ContentWrapper = styled(Box)`
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 0 1rem;
+  @media ${tablet} {
+    max-width: 100%;
+  }
 `;
